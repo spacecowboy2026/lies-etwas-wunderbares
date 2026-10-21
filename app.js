@@ -272,6 +272,38 @@
   document.getElementById('hilfe-knopf').addEventListener('click', () => ueber.showModal())
   ueber.addEventListener('click', ev => { if (ev.target === ueber) ueber.close() })
 
+  // ---------- Empfehlung einreichen (per Web3Forms als E-Mail) ----------
+
+  const formular = document.getElementById('empfehlung')
+  const status = document.getElementById('empfehlung-status')
+  formular.addEventListener('submit', async ev => {
+    ev.preventDefault()
+    const schluessel = (window.EINSTELLUNGEN || {}).web3formsSchluessel
+    if (!schluessel) {
+      status.textContent = 'Das Formular ist noch nicht eingerichtet. Bald geht es.'
+      return
+    }
+    const daten = new FormData(formular)
+    if (daten.get('botcheck')) return // Feld ist für Menschen unsichtbar; ausgefüllt hat es nur ein Bot
+    daten.append('access_key', schluessel)
+    daten.append('subject', `Empfehlung: ${daten.get('text') || daten.get('link')}`)
+    daten.append('from_name', 'Lies etwas Wunderbares')
+    const knopf = formular.querySelector('.senden')
+    knopf.disabled = true
+    status.textContent = 'Wird gesendet …'
+    try {
+      const antwort = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: daten })
+      const ergebnis = await antwort.json()
+      if (!ergebnis.success) throw new Error(ergebnis.message)
+      formular.reset()
+      status.textContent = 'Danke! Deine Empfehlung ist angekommen.'
+    } catch {
+      status.textContent = 'Das hat leider nicht geklappt. Versuch es später noch einmal.'
+    } finally {
+      knopf.disabled = false
+    }
+  })
+
   // ---------- Start ----------
 
   vermessen()

@@ -16,7 +16,7 @@
   <meta name="apple-mobile-web-app-title" content="Lesen">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=648be5d3">
+  <link rel="stylesheet" href="style.css?v=b2a862eb">
 </head>
 <body>
   <div class="hintergrund" id="hg1" style="--opacity:1"></div>
@@ -32,16 +32,31 @@
 
   <button class="hilfe" id="hilfe-knopf" aria-label="Über diese Seite">?</button>
   <dialog class="ueber" id="ueber">
+    <form method="dialog" class="schliessen"><button aria-label="Schließen">×</button></form>
     <h2>Lies etwas Wunderbares</h2>
     <p>Eine Sammlung von Texten, die es wert sind, gelesen zu werden: Essays, Reden und Briefe, die nicht veralten.</p>
     <p>Jede Karte zeigt die Seite, auf der du den Text lesen kannst. Ein Klick darauf öffnet sie.</p>
     <p class="leise">Blättern mit Scrollen, Wischen oder den Pfeiltasten ← →.</p>
-    <form method="dialog"><button>Schließen</button></form>
+    <p class="leise">Inspiriert von <a href="https://readsomethingwonderful.com" target="_blank" rel="noopener">Read Something Wonderful</a> von Matter. Danke für die Idee.</p>
+
+    <h3>Einen Text empfehlen</h3>
+    <p>Du kennst einen Text, der hierher gehört? Er sollte frei online lesbar sein und auch in zwanzig Jahren noch lohnen.</p>
+    <form class="empfehlung" id="empfehlung">
+      <label>Link zum Text <input type="url" name="link" required placeholder="https://…"></label>
+      <label>Titel und Autor <input type="text" name="text" placeholder="optional"></label>
+      <label>Warum dieser Text? <textarea name="warum" rows="3" placeholder="optional"></textarea></label>
+      <label>Dein Name <input type="text" name="name" placeholder="optional, für „empfohlen von …“"></label>
+      <input type="checkbox" name="botcheck" class="falle" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="leise klein">Deine Angaben gehen per E-Mail an mich (über den Formulardienst Web3Forms) und werden nur für diese Empfehlung genutzt.</p>
+      <button type="submit" class="senden">Empfehlung senden</button>
+      <p class="status" id="empfehlung-status" role="status"></p>
+    </form>
   </dialog>
 
   <div class="hinweis" id="hinweis" role="status"></div>
 
+  <script src="einstellungen.js?v=5e2649e8"></script>
   <script src="eintraege.js?v=0afe62d8"></script>
-  <script src="app.js?v=e2050c30"></script>
+  <script src="app.js?v=5e3b78df"></script>
 </body>
 </html>
