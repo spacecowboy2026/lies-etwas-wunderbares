@@ -451,5 +451,137 @@ window.EINTRAEGE = [
     "anmerkung": "Übersetzung von Laura Ehrhard",
     "slug": "nick-bostrom-brief-aus-der-utopie",
     "bild": "bilder/nick-bostrom-brief-aus-der-utopie.jpg?v=1792572851"
+  },
+  {
+    "titel": "Sent from my iPad",
+    "autor": "Steve Jobs",
+    "jahr": 2010,
+    "url": "https://putsomethingback.stevejobsarchive.com/",
+    "farbe_start": "#DF393E",
+    "farbe_ende": "#993B99",
+    "anmerkung": "Auf Englisch",
+    "slug": "steve-jobs-sent-from-my-ipad",
+    "bild": "bilder/steve-jobs-sent-from-my-ipad.jpg?v=1792573125"
+  },
+  {
+    "titel": "The Tail End",
+    "autor": "Tim Urban",
+    "jahr": 2015,
+    "url": "https://waitbutwhy.com/2015/12/the-tail-end.html",
+    "farbe_start": "#F89D3C",
+    "farbe_ende": "#3D3DE7",
+    "anmerkung": "Auf Englisch",
+    "slug": "tim-urban-the-tail-end",
+    "bild": "bilder/tim-urban-the-tail-end.jpg?v=1792573125"
+  },
+  {
+    "titel": "The days are long but the decades are short",
+    "autor": "Sam Altman",
+    "jahr": 2015,
+    "url": "https://blog.samaltman.com/the-days-are-long-but-the-decades-are-short",
+    "farbe_start": "#3C7FDC",
+    "farbe_ende": "#1D1D1D",
+    "anmerkung": "Auf Englisch",
+    "slug": "sam-altman-the-days-are-long-but-the-decades-are-short",
+    "bild": "bilder/sam-altman-the-days-are-long-but-the-decades-are-short.jpg?v=1792573125"
+  },
+  {
+    "titel": "Maker's Schedule, Manager's Schedule",
+    "autor": "Paul Graham",
+    "jahr": 2009,
+    "url": "http://paulgraham.com/makersschedule.html",
+    "farbe_start": "#FFB03A",
+    "farbe_ende": "#4C4C90",
+    "anmerkung": "Auf Englisch",
+    "slug": "paul-graham-maker-s-schedule-manager-s-schedule",
+    "bild": "bilder/paul-graham-maker-s-schedule-manager-s-schedule.jpg?v=1792573125"
+  },
+  {
+    "titel": "They're Made out of Meat",
+    "autor": "Terry Bisson",
+    "jahr": 1991,
+    "url": "https://www.terrybisson.com/theyre-made-out-of-meat-2/",
+    "farbe_start": "#181627",
+    "farbe_ende": "#3e3b4c",
+    "anmerkung": "Auf Englisch",
+    "slug": "terry-bisson-they-re-made-out-of-meat",
+    "bild": "bilder/terry-bisson-they-re-made-out-of-meat.jpg?v=1792573125"
+  },
+  {
+    "titel": "This Is Water",
+    "autor": "David Foster Wallace",
+    "jahr": 2005,
+    "url": "https://fs.blog/2012/04/david-foster-wallace-this-is-water/",
+    "farbe_start": "#94ABFF",
+    "farbe_ende": "#3553FF",
+    "anmerkung": "Auf Englisch",
+    "slug": "david-foster-wallace-this-is-water",
+    "bild": "bilder/david-foster-wallace-this-is-water.jpg?v=1792573126"
+  },
+  {
+    "titel": "Treat your to-read pile like a river, not a bucket",
+    "autor": "Oliver Burkeman",
+    "jahr": 2021,
+    "url": "https://www.oliverburkeman.com/river",
+    "farbe_start": "#e19996",
+    "farbe_ende": "#ed8666",
+    "anmerkung": "Auf Englisch",
+    "slug": "oliver-burkeman-treat-your-to-read-pile-like-a-river-not-a-bucket",
+    "bild": "bilder/oliver-burkeman-treat-your-to-read-pile-like-a-river-not-a-bucket.jpg?v=1792573126"
+  },
+  {
+    "titel": "Does My Son Know You?",
+    "autor": "Jonathan Tjarks",
+    "jahr": 2022,
+    "url": "https://www.theringer.com/2022/3/3/22956353/fatherhood-cancer-jonathan-tjarks",
+    "farbe_start": "#8AC194",
+    "farbe_ende": "#4A8655",
+    "anmerkung": "Auf Englisch",
+    "slug": "jonathan-tjarks-does-my-son-know-you",
+    "bild": "bilder/jonathan-tjarks-does-my-son-know-you.jpg?v=1792573126"
+  },
+  {
+    "titel": "You and Your Research",
+    "autor": "Richard Hamming",
+    "jahr": 1986,
+    "url": "https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf",
+    "farbe_start": "#616a5c",
+    "farbe_ende": "#33352b",
+    "anmerkung": "Auf Englisch",
+    "slug": "richard-hamming-you-and-your-research",
+    "bild": "bilder/richard-hamming-you-and-your-research.jpg?v=1792573126"
+  },
+  {
+    "titel": "Cargo Cult Science",
+    "autor": "Richard Feynman",
+    "jahr": 1974,
+    "url": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+    "farbe_start": "#b65cfe",
+    "farbe_ende": "#2febb7",
+    "anmerkung": "Auf Englisch",
+    "slug": "richard-feynman-cargo-cult-science",
+    "bild": "bilder/richard-feynman-cargo-cult-science.jpg?v=1792573126"
+  },
+  {
+    "titel": "The Relativity of Wrong",
+    "autor": "Isaac Asimov",
+    "jahr": 1989,
+    "url": "https://hermiene.net/essays-trans/relativity_of_wrong.html",
+    "farbe_start": "#92A4DD",
+    "farbe_ende": "#DB8792",
+    "anmerkung": "Auf Englisch",
+    "slug": "isaac-asimov-the-relativity-of-wrong",
+    "bild": "bilder/isaac-asimov-the-relativity-of-wrong.jpg?v=1792573126"
+  },
+  {
+    "titel": "You Are Not Late",
+    "autor": "Kevin Kelly",
+    "jahr": 2014,
+    "url": "https://kk.org/thetechnium/you-are-not-late/",
+    "farbe_start": "#27f33b",
+    "farbe_ende": "#027f63",
+    "anmerkung": "Auf Englisch",
+    "slug": "kevin-kelly-you-are-not-late",
+    "bild": "bilder/kevin-kelly-you-are-not-late.jpg?v=1792573126"
   }
 ]
