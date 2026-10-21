@@ -16,7 +16,7 @@
   <meta name="apple-mobile-web-app-title" content="Wunderbar(es) lesen">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=875785c9">
+  <link rel="stylesheet" href="style.css?v=1790e761">
 </head>
 <body>
   <div class="hintergrund" id="hg1" style="--opacity:1"></div>
@@ -32,12 +32,13 @@
 
   <button class="hilfe" id="hilfe-knopf" aria-label="Über diese Seite">?</button>
   <dialog class="ueber" id="ueber">
-    <form method="dialog" class="schliessen"><button aria-label="Schließen">×</button></form>
-    <h2>Wunderbar<span class="klammer">(es)</span> lesen</h2>
-    <p>Eine Sammlung von Texten, die es wert sind, gelesen zu werden: Essays, Reden und Briefe, die nicht veralten.</p>
-    <p>Jede Karte zeigt die Seite, auf der du den Text lesen kannst. Ein Klick darauf öffnet sie.</p>
-    <p class="leise">Blättern mit Scrollen, Wischen oder den Pfeiltasten ← →.</p>
-    <p class="leise">Inspiriert von <a href="https://readsomethingwonderful.com" target="_blank" rel="noopener">Read Something Wonderful</a> von Matter. Danke für die Idee.</p>
+    <a class="logo ueber-logo" href="#" aria-hidden="true" tabindex="-1">Wunderbar<span class="klammer">(es)</span><br>lesen</a>
+    <form method="dialog" class="schliessen"><button aria-label="Schließen"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></form>
+
+    <div class="ueber-rahmen">
+    <p>Willkommen. Diese Seite sammelt Texte, die es wert sind, gelesen zu werden: Essays, Reden und Briefe, die nicht veralten. Mach es dir gemütlich.</p>
+    <p>Jede Karte zeigt die Seite, auf der du den Text lesen kannst – ein Klick darauf öffnet sie. Weiter geht es mit Scrollen, Wischen oder den Pfeiltasten.</p>
+    <p>Die Idee stammt von <a href="https://readsomethingwonderful.com" target="_blank" rel="noopener">Read Something Wonderful</a>, gemacht vom Team hinter der Lese-App Matter. Danke dafür.</p>
 
     <h3>Einen Text empfehlen</h3>
     <p>Du kennst einen Text, der hierher gehört? Er sollte frei online lesbar sein und auch in zwanzig Jahren noch lohnen.</p>
@@ -73,6 +74,7 @@
         <p><strong>Links:</strong> Ein Klick auf eine Karte öffnet eine fremde Seite; dort gelten deren Datenschutzregeln.</p>
         <p><strong>Deine Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Widerruf deiner Einwilligung – eine Nachricht über das Formular genügt. Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
       </details>
+    </div>
     </div>
   </dialog>
 

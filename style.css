@@ -269,39 +269,59 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, .1), 0 4px 10px rgba(0, 0, 0, .05);
 }
 
+/* „?“-Fenster wie die About-Seite des Originals: schwarze Fläche über allem, der Text steht
+   im Rahmen der Karte (gleiche Größe, Rand und Rundung), Logo bleibt, ✕ statt „?“ unten rechts. */
 .ueber {
-  position: relative;
-  width: min(440px, 92vw);
-  max-height: 88dvh;
-  padding: 28px 28px 22px;
-  border: 1px solid hsla(0, 0%, 100%, .25);
-  border-radius: 16px;
-  background: rgba(24, 26, 28, .96);
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.5;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #000;
+  color: rgba(255, 255, 255, .9);
 }
 
-.ueber::backdrop { background: rgba(0, 0, 0, .45); }
-.ueber h2 { margin: 0 0 12px; font: 700 24px/1.1 Fraunces, Georgia, serif; }
-.ueber h3 { margin: 26px 0 8px; font: 600 17px/1.3 Inter, system-ui, sans-serif; }
-.ueber p { margin: 0 0 12px; }
-.ueber a { color: inherit; }
-.ueber .leise { color: hsla(0, 0%, 100%, .6); font-size: 14px; }
-.ueber .klein { font-size: 12px; }
+.ueber::backdrop { background: #000; }
 
-.schliessen { position: absolute; top: 14px; right: 14px; margin: 0; }
+.ueber-logo { position: fixed; }
+
+.ueber-rahmen {
+  position: absolute;
+  left: 50%;
+  top: 6.36dvh;
+  width: min(561px, 86vw);
+  height: calc(85.44dvh - 6.36dvh - 20px);
+  transform: translateX(-50%);
+  padding: 28px;
+  border: 5px solid hsla(0, 0%, 100%, .2);
+  border-radius: 8px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  font: 500 15px/1.3 Inter, system-ui, sans-serif;
+}
+.ueber-rahmen::-webkit-scrollbar { display: none; }
+
+.ueber-rahmen p { margin: 0 0 15px; }
+.ueber-rahmen a { color: #fff; }
+.ueber-rahmen h3 { margin: 30px 0 10px; font: 600 15px/1.3 Inter, system-ui, sans-serif; color: #fff; }
+.ueber .leise { color: hsla(0, 0%, 100%, .55); }
+.ueber .klein { font-size: 12px; font-weight: 400; }
+
+.schliessen { position: fixed; right: 40px; bottom: 32px; z-index: 2; margin: 0; }
 .schliessen button {
-  width: 32px; height: 32px; border: 0; border-radius: 50%;
-  background: hsla(0, 0%, 100%, .12); color: #fff; font: 400 20px/1 Inter, system-ui, sans-serif; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  width: 35px; height: 35px; padding: 0; border: 0;
+  background: none; color: #fff; cursor: pointer;
 }
 
 .empfehlung label {
   display: block;
   margin: 0 0 12px;
   font-size: 13px;
-  font-weight: 600;
-  color: hsla(0, 0%, 100%, .75);
+  font-weight: 500;
+  color: hsla(0, 0%, 100%, .6);
 }
 
 .empfehlung input, .empfehlung textarea {
@@ -309,9 +329,9 @@ body {
   width: 100%;
   margin-top: 5px;
   padding: 10px 12px;
-  border: 1px solid hsla(0, 0%, 100%, .2);
-  border-radius: 10px;
-  background: hsla(0, 0%, 100%, .06);
+  border: 1px solid hsla(0, 0%, 100%, .22);
+  border-radius: 8px;
+  background: transparent;
   color: #fff;
   font: 400 15px/1.4 Inter, system-ui, sans-serif;
   resize: vertical;
@@ -329,7 +349,7 @@ body {
 .empfehlung .senden:disabled { opacity: .5; cursor: default; }
 .empfehlung .status { margin: 10px 0 0; min-height: 1.5em; font-size: 14px; }
 
-.vermerke { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 22px; font-size: 12px; color: hsla(0, 0%, 100%, .55); }
+.vermerke { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 40px; font-size: 12px; font-weight: 400; color: hsla(0, 0%, 100%, .55); }
 .vermerke details { flex-basis: auto; }
 .vermerke details[open] { flex-basis: 100%; }
 .vermerke summary { cursor: pointer; list-style: none; text-decoration: underline; text-underline-offset: 2px; }
@@ -367,6 +387,9 @@ body {
   .logo { display: none; }
   .info { display: none; }
   .hilfe { right: 16px; bottom: 16px; }
+  .ueber-logo { display: none; }
+  .ueber-rahmen { top: 5dvh; width: 88vw; height: 82dvh; padding: 20px; }
+  .schliessen { right: 16px; bottom: 16px; }
 
   /* Maße aus dem Original, gemessen auf einem iPhone (390 × 844):
      eine Karte pro 75 % Bildschirmhöhe, Karte mittig mit 80 % Breite und vollständig sichtbar,
