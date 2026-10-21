@@ -1,31 +1,37 @@
-/* Leseseiten für eigene Übersetzungen – schlicht und zeitlos, angelehnt an den Artikel-Look der New York Times:
-   Serifen-Titel und -Text (Georgia), Autorzeile und Kleingedrucktes in Libre Franklin, viel Weiß. */
+/* Leseseiten für eigene Übersetzungen – angelehnt an den Artikel-Look des New Yorker
+   (Werte am 21.10.2026 aus einem New-Yorker-Artikel ausgelesen):
+   Titel in einer Display-Antiqua (dort Irvin, hier Forum), Vorspann kursiv und Fließtext in Caslon
+   (hier Libre Caslon), Autorzeile und Datum in einer schlichten Grotesk (dort Graphik, hier Inter),
+   rote Rubrik, große Initiale. */
 
-@font-face {
-  font-family: "Libre Franklin";
-  src: url(../fonts/libre-franklin-latin.woff2) format("woff2");
-  font-weight: 400 700; font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Libre Franklin";
-  src: url(../fonts/libre-franklin-latin-ext.woff2) format("woff2");
-  font-weight: 400 700; font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: Fraunces;
-  src: url(../fonts/fraunces-latin.woff2) format("woff2");
-  font-weight: 600 800; font-display: swap;
-}
+@font-face { font-family: Forum; src: url(../fonts/forum-normal-400-latin.woff2) format("woff2"); font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: Forum; src: url(../fonts/forum-normal-400-latin-ext.woff2) format("woff2"); font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Libre Caslon"; src: url(../fonts/libre-caslon-text-normal-400-latin.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Libre Caslon"; src: url(../fonts/libre-caslon-text-normal-400-latin-ext.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Libre Caslon"; src: url(../fonts/libre-caslon-text-italic-400-latin.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Libre Caslon"; src: url(../fonts/libre-caslon-text-italic-400-latin-ext.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Libre Caslon"; src: url(../fonts/libre-caslon-text-normal-700-latin.woff2) format("woff2"); font-weight: 700; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; src: url(../fonts/inter-latin.woff2) format("woff2"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: Fraunces; src: url(../fonts/fraunces-latin.woff2) format("woff2"); font-weight: 600 800; font-display: swap; }
 
 :root {
+  --schwarz: #000;
   --text: #121212;
-  --grau: #5a5a5a;
-  --hellgrau: #727272;
-  --linie: #dfdfdf;
-  --serif: Georgia, "Times New Roman", Times, serif;
-  --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --grau: #666;
+  --linie: #e5e5e5;
+  --rot: #db3334;
+  --anzeige: Forum, Georgia, serif;
+  --caslon: "Libre Caslon", Georgia, "Times New Roman", serif;
+  --grotesk: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -34,8 +40,8 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: #fff;
-  color: var(--text);
-  font-family: var(--serif);
+  color: var(--schwarz);
+  font-family: var(--caslon);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -46,89 +52,105 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
+  height: 56px;
   border-bottom: 1px solid var(--linie);
 }
 
 .kopfzeile .zurueck {
   position: absolute;
   left: 20px;
-  font: 500 13px/1 var(--sans);
+  font: 500 13px/1 var(--grotesk);
   color: var(--grau);
   text-decoration: none;
 }
-.kopfzeile .zurueck:hover { color: var(--text); }
+.kopfzeile .zurueck:hover { color: var(--schwarz); }
 
 .marke {
-  font: 700 21px/1 Fraunces, var(--serif);
+  font: 700 21px/1 Fraunces, Georgia, serif;
   letter-spacing: -.01em;
-  color: var(--text);
+  color: var(--schwarz);
   text-decoration: none;
 }
 .klammer { opacity: .5; margin-left: .05em; }
 
-/* ---------- Artikel ---------- */
+/* ---------- Artikelkopf ---------- */
 
 main {
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 48px 20px 96px;
+  padding: 56px 24px 100px;
 }
 
 .rubrik {
-  margin: 0 0 14px;
-  font: 600 12px/1 var(--sans);
-  letter-spacing: .06em;
+  margin: 0 0 12px;
+  font: 400 13px/1 var(--anzeige);
+  letter-spacing: .04em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--grau);
 }
+.rubrik .rot { color: var(--rot); margin-right: .5em; }
 
 h1 {
   margin: 0;
-  font: 700 clamp(32px, 6.4vw, 42px)/1.12 var(--serif);
-  letter-spacing: -.005em;
+  font: 400 clamp(34px, 7vw, 46px)/1.1 var(--anzeige);
+  text-transform: uppercase;
+  letter-spacing: .005em;
   text-wrap: balance;
 }
 
 .vorspann {
   margin: 14px 0 0;
-  font: 400 21px/1.4 var(--serif);
-  color: var(--grau);
+  font: italic 400 21px/1.35 var(--caslon);
+  color: var(--text);
 }
 
 .zeile {
   margin: 26px 0 0;
-  font: 400 14px/1.5 var(--sans);
-  color: var(--hellgrau);
+  font: 500 12px/1.6 var(--grotesk);
+  letter-spacing: -.01em;
+  color: var(--grau);
 }
-.zeile .von { display: block; font-weight: 700; color: var(--text); }
+.zeile .von {
+  display: block;
+  font: 600 14px/1.4 var(--grotesk);
+  color: var(--schwarz);
+}
 
-.text { margin-top: 34px; }
+/* ---------- Fließtext ---------- */
+
+.text { margin-top: 44px; }
 
 .text p {
-  margin: 0 0 1.05em;
-  font: 400 20px/1.55 var(--serif);
+  margin: 0 0 1.1em;
+  font: 400 21px/1.5 var(--caslon);
 }
 
-.text .gedicht, .text .zitat { margin: 1.2em 0 1.4em 1.2em; }
+/* Große Initiale über zwei Zeilen, wie beim New Yorker */
+.text > p:first-child::first-letter {
+  float: left;
+  margin: .02em .06em 0 0;
+  font: 400 3.15em/.82 var(--caslon);
+}
+
+.text .gedicht, .text .zitat { margin: 1.3em 0 1.5em 1.4em; }
 .text .gedicht p, .text .zitat p { margin: 0 0 .9em; font-size: 19px; line-height: 1.5; font-style: italic; }
 .text .zitat .uebersetzt { font-style: normal; color: var(--grau); }
 
 sup { line-height: 0; }
 sup a {
   padding-left: 1px;
-  font: 600 11px/0 var(--sans);
-  color: var(--hellgrau);
+  font: 600 11px/0 var(--grotesk);
+  color: var(--rot);
   text-decoration: none;
 }
 
-/* ---------- Kleingedrucktes am Ende ---------- */
+/* ---------- Ende ---------- */
 
 .vermerk {
-  margin-top: 40px;
+  margin-top: 44px;
   padding-top: 18px;
   border-top: 1px solid var(--linie);
-  font: italic 400 15px/1.5 var(--serif);
+  font: italic 400 16px/1.5 var(--caslon);
   color: var(--grau);
 }
 .vermerk a { color: inherit; }
@@ -136,23 +158,24 @@ sup a {
 .anmerkungen { margin-top: 30px; }
 .anmerkungen h2 {
   margin: 0 0 12px;
-  font: 700 13px/1 var(--sans);
+  font: 400 13px/1 var(--anzeige);
   letter-spacing: .04em;
   text-transform: uppercase;
+  color: var(--rot);
 }
 .anmerkungen ol { margin: 0; padding-left: 1.2em; }
 .anmerkungen li {
   margin-bottom: 8px;
-  font: 400 14px/1.5 var(--sans);
-  color: var(--grau);
+  font: 400 14px/1.55 var(--grotesk);
+  color: #444;
 }
-.anmerkungen li:target { background: #fff6d6; }
-.anmerkungen li a { color: var(--hellgrau); text-decoration: none; }
+.anmerkungen li:target { background: #fff3d1; }
+.anmerkungen li a { color: var(--grau); text-decoration: none; }
 
 @media (max-width: 520px) {
   .kopfzeile .zurueck { font-size: 0; }
   .kopfzeile .zurueck::before { content: "←"; font-size: 18px; }
-  main { padding-top: 32px; }
+  main { padding: 36px 20px 80px; }
   .vorspann { font-size: 19px; }
   .text p { font-size: 19px; }
 }

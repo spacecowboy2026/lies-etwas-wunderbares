@@ -589,10 +589,10 @@ window.EINTRAEGE = [
     "autor": "G. K. Chesterton",
     "jahr": 1908,
     "url": "texte/chesterton-dem-eigenen-hut-hinterherlaufen.html",
-    "farbe_start": "#1d1b17",
-    "farbe_ende": "#a0784a",
+    "farbe_start": "#141414",
+    "farbe_ende": "#8c2a2b",
     "anmerkung": "Eigene Übersetzung",
     "slug": "g-k-chesterton-dem-eigenen-hut-hinterherlaufen",
-    "bild": "bilder/g-k-chesterton-dem-eigenen-hut-hinterherlaufen.jpg?v=1792574358"
+    "bild": "bilder/g-k-chesterton-dem-eigenen-hut-hinterherlaufen.jpg?v=1792574659"
   }
 ]
