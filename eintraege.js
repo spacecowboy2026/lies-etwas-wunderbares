@@ -583,5 +583,16 @@ window.EINTRAEGE = [
     "anmerkung": "Auf Englisch",
     "slug": "kevin-kelly-you-are-not-late",
     "bild": "bilder/kevin-kelly-you-are-not-late.jpg?v=1792573126"
+  },
+  {
+    "titel": "Dem eigenen Hut hinterherlaufen",
+    "autor": "G. K. Chesterton",
+    "jahr": 1908,
+    "url": "texte/chesterton-dem-eigenen-hut-hinterherlaufen.html",
+    "farbe_start": "#1d1b17",
+    "farbe_ende": "#a0784a",
+    "anmerkung": "Eigene Übersetzung",
+    "slug": "g-k-chesterton-dem-eigenen-hut-hinterherlaufen",
+    "bild": "bilder/g-k-chesterton-dem-eigenen-hut-hinterherlaufen.jpg?v=1792573879"
   }
 ]
