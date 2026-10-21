@@ -81,43 +81,43 @@ body {
   text-decoration: none;
 }
 
-/* ---------- Titelliste links (Maße und Helligkeitsstufen wie im Original) ---------- */
+/* ---------- Titelliste links (Werte aus dem Original: .hcoww0/1/2 und die nth-child-Stufen) ---------- */
 
 .liste {
   position: fixed;
-  top: 217px;
-  left: 46px;
+  top: 24.1344vh;
+  left: 3.1746vw;
   z-index: 2;
-  width: 220px;
-  height: calc(100dvh - 217px - 164px);
-  overflow-y: auto;
+  width: 15.2778vw;
+  height: 57.6375vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
   scrollbar-width: none;
   overscroll-behavior: contain;
 }
 
 .liste::-webkit-scrollbar { display: none; }
 
-.liste-innen {
-  position: relative;
-  padding-bottom: 100dvh;
-}
+.liste-innen { position: relative; }
 
 .listen-titel {
   display: block;
   width: 100%;
-  margin: 0 0 16px;
-  padding: 0;
+  margin: 0;
+  padding: 8px 0;
   border: 0;
   background: none;
-  color: rgba(255, 255, 255, var(--hell, 0));
-  font: 600 16px/1.25 Inter, system-ui, sans-serif;
+  color: hsla(0, 0%, 100%, var(--hell, 0));
+  font: 16px/1.25 Inter, system-ui, sans-serif;
+  font-variation-settings: "wght" 600;
   text-align: left;
   cursor: pointer;
-  transition: color .3s linear;
+  transform-origin: left center;
+  transition: font-size .3s, color .3s linear;
 }
 
-.listen-titel:hover { color: rgba(255, 255, 255, max(var(--hell, 0), .7)); }
-.listen-titel.aktiv { cursor: default; }
+.listen-titel:hover { color: hsla(0, 0%, 100%, .6); }
+.listen-titel.aktiv { color: #fff; max-width: 20vw; cursor: default; }
 
 @media (max-width: 1140px) {
   .liste { display: none; }

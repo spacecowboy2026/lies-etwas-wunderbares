@@ -3,7 +3,9 @@
 //
 // Endlos: Die Texte werden in zufälliger Reihenfolge als „Runde“ angehängt; kurz vor dem Ende
 // kommt die nächste Runde dazu, nach dem letzten Text folgt also wieder der erste.
-// Links läuft die Titelliste mit: aktueller Titel oben, die folgenden immer blasser.
+// Links die Titelliste wie im Original: alle Titel vielfach wiederholt (nach oben und unten endlos),
+// beim Textwechsel springt sie sofort, sodass Hintergrund, Angaben rechts und der weiße Titel links
+// gleichzeitig wechseln. Die Helligkeit hängt an der Position im sichtbaren Bereich der Liste.
 
 (() => {
   const eintraege = window.EINTRAEGE || []
@@ -16,8 +18,8 @@
 
   const ZUFALL = true // false = Reihenfolge wie in texte.json
   const SCHWARZ = 'var(--schwarz)'
-  // Helligkeit der Titel unter dem aktuellen, wie im Original gemessen.
-  const STUFEN = [1, 0.4, 0.4, 0.4, 0.3, 0.3, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.05, 0.05]
+  // Helligkeit nach Platz im sichtbaren Bereich der Liste (Original: nth-child-Regeln); danach unsichtbar.
+  const STUFEN = [0, 0.4, 0.4, 0.4, 0.3, 0.3, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.05, 0.05]
   const LINK_SYMBOL =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>'
 
@@ -76,7 +78,7 @@
     info.append(angaben)
   })
 
-  // ---------- Karten und Titelliste (eine Runde nach der anderen) ----------
+  // ---------- Karten (eine Runde nach der anderen) ----------
 
   const beobachter = new IntersectionObserver(
     b => b.forEach(x => {
@@ -95,7 +97,6 @@
 
   const runde = () => {
     const karteFrag = document.createDocumentFragment()
-    const listeFrag = document.createDocumentFragment()
     for (const i of reihenfolge) {
       const pos = folge.length
       folge.push(i)
@@ -116,16 +117,8 @@
       karteFrag.append(karte)
       beobachter.observe(karte)
       groesse.observe(karte.querySelector('img'))
-
-      const punkt = document.createElement('button')
-      punkt.className = 'listen-titel'
-      punkt.dataset.pos = pos
-      punkt.textContent = e.titel
-      punkt.tabIndex = -1
-      listeFrag.append(punkt)
     }
     karten.append(karteFrag)
-    listeInnen.append(listeFrag)
   }
 
   // Zwei Runden zum Start; jede weitere kommt, wenn man sich dem Ende der letzten nähert.
@@ -146,20 +139,74 @@
     sichtbar = neu
   }
 
-  const faerbeListe = () => {
-    listeInnen.querySelectorAll('.listen-titel').forEach(t => {
-      const abstand = Number(t.dataset.pos) - aktiv
-      const hell = abstand < 0 ? 0 : (STUFEN[abstand] ?? 0)
-      t.style.setProperty('--hell', hell)
-      t.classList.toggle('aktiv', abstand === 0)
-      t.style.visibility = hell === 0 ? 'hidden' : ''
-    })
+  // ---------- Titelliste links ----------
+
+  const n = reihenfolge.length
+  const WDH = Math.max(5, Math.ceil(300 / n)) | 1 // ungerade Zahl an Wiederholungen
+  const MITTE = Math.floor(WDH / 2)
+  const titel = []
+  {
+    const frag = document.createDocumentFragment()
+    for (let k = 0; k < WDH * n; k++) {
+      const t = document.createElement('button')
+      t.className = 'listen-titel'
+      t.textContent = eintraege[reihenfolge[k % n]].titel
+      t.tabIndex = -1
+      t.dataset.k = k
+      frag.append(t)
+      titel.push(t)
+    }
+    listeInnen.append(frag)
   }
 
-  const listeNachfuehren = () => {
-    const t = listeInnen.querySelector(`.listen-titel[data-pos="${aktiv}"]`)
-    if (t) liste.scrollTo({ top: t.offsetTop, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+  let oben = [] // offsetTop jedes Titels, für schnelles Suchen
+  let rundenHoehe = 0
+  const vermessen = () => {
+    oben = titel.map(t => t.offsetTop)
+    rundenHoehe = oben[n] - oben[0]
   }
+
+  const listenPos = pos => MITTE * n + (pos % n)
+
+  let gefaerbt = []
+  const faerbeListe = () => {
+    if (!oben.length) return
+    const y = liste.scrollTop
+    let lo = 0, hi = titel.length - 1 // erster Titel, der unten über die Oberkante ragt
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1
+      if (oben[mid] + titel[mid].offsetHeight > y) hi = mid
+      else lo = mid + 1
+    }
+    for (const t of gefaerbt) t.style.removeProperty('--hell')
+    gefaerbt = titel.slice(lo, lo + STUFEN.length)
+    gefaerbt.forEach((t, rang) => t.style.setProperty('--hell', STUFEN[rang]))
+  }
+
+  let aktiverTitel = null
+  const listeNachfuehren = () => {
+    const t = titel[listenPos(aktiv)]
+    aktiverTitel?.classList.remove('aktiv')
+    t.classList.add('aktiv')
+    aktiverTitel = t
+    if (oben.length) liste.scrollTop = oben[listenPos(aktiv)] // sofort, wie im Original
+    faerbeListe()
+  }
+
+  // Beim eigenen Scrollen: Helligkeit neu verteilen und unbemerkt um eine Runde versetzen,
+  // wenn man sich einem Ende nähert – so geht es in beide Richtungen endlos weiter.
+  let rahmen = 0
+  liste.addEventListener('scroll', () => {
+    if (rahmen) return
+    rahmen = requestAnimationFrame(() => {
+      rahmen = 0
+      if (rundenHoehe > 0) {
+        if (liste.scrollTop < rundenHoehe) liste.scrollTop += rundenHoehe * MITTE
+        else if (liste.scrollTop > rundenHoehe * (WDH - 2)) liste.scrollTop -= rundenHoehe * MITTE
+      }
+      faerbeListe()
+    })
+  }, { passive: true })
 
   const aktiviere = pos => {
     if (pos === aktiv) return
@@ -168,7 +215,6 @@
     const e = eintraege[i]
     setzeHintergrund(e)
     info.querySelectorAll('.eintrag').forEach(el => el.classList.toggle('aktiv', Number(el.dataset.idx) === i))
-    faerbeListe()
     listeNachfuehren()
     document.title = `${e.titel} – Lies etwas Wunderbares`
     history.replaceState(null, '', `#${e.slug}`)
@@ -177,18 +223,17 @@
 
   // ---------- Bedienung ----------
 
-  const springe = pos => karten.querySelector(`.karte[data-pos="${pos}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const springe = pos => karten.querySelector(`.karte[data-pos="${pos}"]`)?.scrollIntoView({ block: 'start' })
 
+  // Klick auf einen Titel: so viele Texte vor oder zurück, wie er vom aktuellen entfernt steht.
   liste.addEventListener('click', ev => {
     const t = ev.target.closest('.listen-titel')
-    if (t) springe(Number(t.dataset.pos))
+    if (!t) return
+    let ziel = aktiv + (Number(t.dataset.k) - listenPos(aktiv))
+    if (ziel < 0) ziel = ((ziel % n) + n) % n
+    while (ziel > folge.length - 2) runde()
+    springe(ziel)
   })
-
-  // Nach eigenem Scrollen in der Liste springt sie nach kurzer Pause zum aktuellen Titel zurück.
-  liste.addEventListener('scroll', () => {
-    clearTimeout(liste.zurueck)
-    liste.zurueck = setTimeout(listeNachfuehren, 2500)
-  }, { passive: true })
 
   const blaettere = richtung =>
     document.body.scrollBy({ top: richtung * window.innerHeight * 0.8544, behavior: 'smooth' })
@@ -229,5 +274,8 @@
 
   // ---------- Start ----------
 
+  vermessen()
   aktiviere(0)
+  document.fonts?.ready.then(() => { vermessen(); listeNachfuehren() })
+  addEventListener('resize', () => { vermessen(); listeNachfuehren() })
 })()
