@@ -1,4 +1,4 @@
-# Lies etwas Wunderbares
+# Wunderbar(es) lesen
 
 Zeitlose Texte, die es wert sind, gelesen zu werden: Essays, Reden und Briefe. Eine Karte pro Text, ein Klick öffnet das Original.
 

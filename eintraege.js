@@ -1,4 +1,4 @@
-// Automatisch erzeugt aus lies-etwas-wunderbares-intern/daten/texte.json – nicht von Hand bearbeiten.
+// Automatisch erzeugt aus wunderbares-lesen-intern/daten/texte.json – nicht von Hand bearbeiten.
 window.EINTRAEGE = [
   {
     "titel": "Über die allmähliche Verfertigung der Gedanken beim Reden",

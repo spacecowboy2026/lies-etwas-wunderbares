@@ -82,7 +82,7 @@ body {
 }
 
 /* Die Klammer im Namen etwas leiser, damit beide Lesarten sichtbar bleiben: „Wunderbar lesen“ und „Wunderbares lesen“. */
-.klammer { opacity: .55; font-weight: 600; }
+.klammer { opacity: .55; font-weight: 600; margin-left: .05em; }
 
 /* ---------- Titelliste links (Werte aus dem Original: .hcoww0/1/2 und die nth-child-Stufen) ---------- */
 
