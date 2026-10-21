@@ -1,4 +1,4 @@
-// Lies etwas Wunderbares — eine Karte pro Text, der Hintergrund folgt den Farben des Textes.
+// Wunderbar(es) lesen — eine Karte pro Text, der Hintergrund folgt den Farben des Textes.
 // Funktionsweise nach readsomethingwonderful.com (Analyse im intern-Repo: analyse/ANALYSE_rsw.md).
 //
 // Endlos: Die Texte werden in zufälliger Reihenfolge als „Runde“ angehängt; kurz vor dem Ende
@@ -216,7 +216,7 @@
     setzeHintergrund(e)
     info.querySelectorAll('.eintrag').forEach(el => el.classList.toggle('aktiv', Number(el.dataset.idx) === i))
     listeNachfuehren()
-    document.title = `${e.titel} – Lies etwas Wunderbares`
+    document.title = `${e.titel} – Wunderbar(es) lesen`
     history.replaceState(null, '', `#${e.slug}`)
     if (pos > folge.length - eintraege.length) runde()
   }
@@ -314,10 +314,7 @@
       formular.reset()
       status.textContent = 'Danke! Deine Empfehlung ist angekommen.'
     } catch {
-      // Ersatzweg: das eigene Mailprogramm mit vorbereiteter Nachricht
-      const betreff = encodeURIComponent(`Empfehlung: ${daten.get('text') || daten.get('link')}`)
-      const inhalt = encodeURIComponent(`${daten.get('link')}\n\n${daten.get('warum') || ''}\n\n${daten.get('name') || ''}`)
-      status.innerHTML = `Das hat leider nicht geklappt. <a href="mailto:${an}?subject=${betreff}&body=${inhalt}">Per E-Mail schicken</a>`
+      status.textContent = 'Das hat leider nicht geklappt. Versuch es bitte später noch einmal.'
     } finally {
       knopf.disabled = false
     }

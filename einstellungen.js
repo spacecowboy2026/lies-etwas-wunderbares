@@ -1,9 +1,8 @@
 // Einstellungen der Seite.
 //
 // Empfehlungen laufen über FormSubmit (https://formsubmit.co): kein Konto, kein Schlüssel.
-// Die erste Einsendung löst eine Bestätigungsmail an diese Adresse aus; erst nach dem Klick
-// darauf werden Empfehlungen zugestellt. FormSubmit bietet danach eine Ersatzadresse
-// (zufällige Zeichenfolge) an, die man hier statt der echten Adresse eintragen kann.
+// Statt der E-Mail-Adresse steht hier die Ersatzkennung, die FormSubmit nach der Aktivierung
+// geschickt hat – so taucht die echte Adresse nirgends im Quelltext auf.
 window.EINSTELLUNGEN = {
-  empfehlungAn: 'gomargraf@gmail.com',
+  empfehlungAn: '6df22c4385d8341cd76d3212fb5140a5',
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Lies etwas Wunderbares</title>
+  <title>Wunderbar(es) lesen</title>
   <script>
     // Unter /lesen (ohne Schrägstrich) würden style.css und bilder/ eine Ebene zu hoch gesucht.
     if (location.protocol.startsWith('http') && !location.pathname.endsWith('/') && !location.pathname.endsWith('.html'))
@@ -13,16 +13,16 @@
   <meta name="theme-color" content="#181a1c">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Lesen">
+  <meta name="apple-mobile-web-app-title" content="Wunderbar(es) lesen">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=4eca0787">
+  <link rel="stylesheet" href="style.css?v=80b76797">
 </head>
 <body>
   <div class="hintergrund" id="hg1" style="--opacity:1"></div>
   <div class="hintergrund" id="hg2" style="--opacity:0"></div>
 
-  <a class="logo" href="#" aria-label="Lies etwas Wunderbares, zum Anfang">Lies<br>etwas<br>Wunderbares</a>
+  <a class="logo" href="#" aria-label="Wunderbar(es) lesen, zum Anfang">Wunderbar<span class="klammer">(es)</span><br>lesen</a>
 
   <nav class="liste" id="liste" aria-label="Titel"><div class="liste-innen" id="liste-innen"></div></nav>
 
@@ -33,7 +33,7 @@
   <button class="hilfe" id="hilfe-knopf" aria-label="Über diese Seite">?</button>
   <dialog class="ueber" id="ueber">
     <form method="dialog" class="schliessen"><button aria-label="Schließen">×</button></form>
-    <h2>Lies etwas Wunderbares</h2>
+    <h2>Wunderbar<span class="klammer">(es)</span> lesen</h2>
     <p>Eine Sammlung von Texten, die es wert sind, gelesen zu werden: Essays, Reden und Briefe, die nicht veralten.</p>
     <p>Jede Karte zeigt die Seite, auf der du den Text lesen kannst. Ein Klick darauf öffnet sie.</p>
     <p class="leise">Blättern mit Scrollen, Wischen oder den Pfeiltasten ← →.</p>
@@ -61,25 +61,25 @@
       <details>
         <summary>Impressum</summary>
         <p>Ein privates, nicht kommerzielles Projekt von Ole Margraf.<br>
-        Kontakt: <span class="adresse" data-name="gomargraf" data-domain="gmail.com">gomargraf (at) gmail.com</span></p>
+        Kontakt: über das Formular „Einen Text empfehlen“ oben – es erreicht mich per E-Mail, auch für alles andere.</p>
         <p>Die verlinkten Texte und Seiten gehören ihren Urheberinnen und Urhebern. Für deren Inhalte bin ich nicht verantwortlich.</p>
       </details>
       <details>
         <summary>Datenschutz</summary>
-        <p><strong>Verantwortlich:</strong> Ole Margraf, gomargraf (at) gmail.com</p>
+        <p><strong>Verantwortlich:</strong> Ole Margraf, erreichbar über das Formular oben.</p>
         <p><strong>Hosting:</strong> Die Seite liegt bei GitHub Pages (GitHub Inc., USA). Beim Aufruf verarbeitet GitHub technisch nötige Daten wie die IP-Adresse, um die Seite auszuliefern und Missbrauch abzuwehren. Siehe die Datenschutzerklärung von GitHub.</p>
         <p><strong>Keine Cookies, kein Tracking:</strong> Die Seite setzt keine Cookies und wertet nichts aus. Schriften und Bilder liegen auf dieser Seite selbst; es werden keine fremden Dienste nachgeladen.</p>
         <p><strong>Empfehlungsformular:</strong> Wenn du eine Empfehlung schickst, gehen Link, Titel, Begründung und (freiwillig) dein Name über den Dienst FormSubmit (Devro LABS, Sitz außerhalb der EU) als E-Mail an mich. Rechtsgrundlage ist deine Einwilligung durch das Absenden (Art. 6 Abs. 1 lit. a DSGVO). Ich nutze die Angaben nur, um den Text zu prüfen, und lösche die E-Mail danach. FormSubmit speichert Einsendungen nach eigenen Angaben bis zu 30 Tage.</p>
         <p><strong>Links:</strong> Ein Klick auf eine Karte öffnet eine fremde Seite; dort gelten deren Datenschutzregeln.</p>
-        <p><strong>Deine Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Widerruf deiner Einwilligung – eine E-Mail genügt. Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
+        <p><strong>Deine Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Widerruf deiner Einwilligung – eine Nachricht über das Formular genügt. Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
       </details>
     </div>
   </dialog>
 
   <div class="hinweis" id="hinweis" role="status"></div>
 
-  <script src="einstellungen.js?v=be689c06"></script>
+  <script src="einstellungen.js?v=92a167d4"></script>
   <script src="eintraege.js?v=518feb87"></script>
-  <script src="app.js?v=e56e7e0e"></script>
+  <script src="app.js?v=f38c0314"></script>
 </body>
 </html>
