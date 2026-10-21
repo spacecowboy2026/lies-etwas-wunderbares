@@ -71,6 +71,7 @@
       <h2 class="titel">${text(e.titel)}</h2>
       <p class="autor">${text(e.autor)}</p>
       ${e.empfohlen ? `<p class="empfohlen">empfohlen von ${text(e.empfohlen)}</p>` : ''}
+      ${e.anmerkung ? `<p class="empfohlen">${text(e.anmerkung)}</p>` : ''}
       <div class="knoepfe">
         <button class="knopf symbol" data-teilen="${i}" aria-label="Link kopieren">${LINK_SYMBOL}</button>
         <a class="knopf" href="${text(e.url)}" target="_blank" rel="noopener">Lesen</a>

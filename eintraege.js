@@ -397,5 +397,59 @@ window.EINTRAEGE = [
     "farbe_ende": "#b5a03a",
     "slug": "katja-petrowskaja-vielleicht-esther",
     "bild": "bilder/katja-petrowskaja-vielleicht-esther.jpg?v=1792571456"
+  },
+  {
+    "titel": "Ein bescheidener Vorschlag",
+    "autor": "Jonathan Swift",
+    "jahr": 1729,
+    "url": "https://de.wikisource.org/wiki/Ein_bescheidener_Vorschlag",
+    "farbe_start": "#1d1a16",
+    "farbe_ende": "#7a5c3a",
+    "anmerkung": "Übersetzung von Franz Kottenkamp, 1844",
+    "slug": "jonathan-swift-ein-bescheidener-vorschlag",
+    "bild": "bilder/jonathan-swift-ein-bescheidener-vorschlag.jpg?v=1792572851"
+  },
+  {
+    "titel": "Ich, der Bleistift",
+    "autor": "Leonard E. Read",
+    "jahr": 1958,
+    "url": "https://www.libinst.ch/publikationen/LI-Paper-Read-Bleistift.pdf",
+    "farbe_start": "#1e1c14",
+    "farbe_ende": "#d1a82e",
+    "anmerkung": "Übersetzung von Gesine von Prollius",
+    "slug": "leonard-e-read-ich-der-bleistift",
+    "bild": "bilder/leonard-e-read-ich-der-bleistift.jpg?v=1792572851"
+  },
+  {
+    "titel": "Das Ei",
+    "autor": "Andy Weir",
+    "url": "https://galactanet.com/oneoff/theegg_de_mod.html",
+    "farbe_start": "#0b0f1f",
+    "farbe_ende": "#4a5bd1",
+    "anmerkung": "Übersetzung von Stefan Zisting",
+    "slug": "andy-weir-das-ei",
+    "bild": "bilder/andy-weir-das-ei.jpg?v=1792572851"
+  },
+  {
+    "titel": "Vier Quadranten der Konformität",
+    "autor": "Paul Graham",
+    "jahr": 2020,
+    "url": "https://www.noahleidinger.com/unlisted/konformismus-graham-paul",
+    "farbe_start": "#141a22",
+    "farbe_ende": "#5d7da3",
+    "anmerkung": "Übersetzung von Noah Leidinger",
+    "slug": "paul-graham-vier-quadranten-der-konformitaet",
+    "bild": "bilder/paul-graham-vier-quadranten-der-konformitaet.jpg?v=1792572851"
+  },
+  {
+    "titel": "Brief aus der Utopie",
+    "autor": "Nick Bostrom",
+    "jahr": 2008,
+    "url": "https://nickbostrom.com/translations/utopia-german.pdf",
+    "farbe_start": "#1a1426",
+    "farbe_ende": "#b08cc9",
+    "anmerkung": "Übersetzung von Laura Ehrhard",
+    "slug": "nick-bostrom-brief-aus-der-utopie",
+    "bild": "bilder/nick-bostrom-brief-aus-der-utopie.jpg?v=1792572851"
   }
 ]
