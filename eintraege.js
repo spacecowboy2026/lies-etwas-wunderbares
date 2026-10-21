@@ -593,6 +593,6 @@ window.EINTRAEGE = [
     "farbe_ende": "#a0784a",
     "anmerkung": "Eigene Übersetzung",
     "slug": "g-k-chesterton-dem-eigenen-hut-hinterherlaufen",
-    "bild": "bilder/g-k-chesterton-dem-eigenen-hut-hinterherlaufen.jpg?v=1792573879"
+    "bild": "bilder/g-k-chesterton-dem-eigenen-hut-hinterherlaufen.jpg?v=1792574358"
   }
 ]
