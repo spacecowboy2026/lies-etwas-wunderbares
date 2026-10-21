@@ -48,7 +48,7 @@ window.EINTRAEGE = [
     "farbe_start": "#1e2a24",
     "farbe_ende": "#4f7a62",
     "slug": "hugo-von-hofmannsthal-ein-brief",
-    "bild": "bilder/hugo-von-hofmannsthal-ein-brief.jpg?v=1792564265"
+    "bild": "bilder/hugo-von-hofmannsthal-ein-brief.jpg?v=1792568018"
   },
   {
     "titel": "1.000 wahre Fans",
@@ -109,7 +109,7 @@ window.EINTRAEGE = [
     "farbe_start": "#20232a",
     "farbe_ende": "#6c5b7b",
     "slug": "sigmund-freud-vergaenglichkeit",
-    "bild": "bilder/sigmund-freud-vergaenglichkeit.jpg?v=1792564265"
+    "bild": "bilder/sigmund-freud-vergaenglichkeit.jpg?v=1792568018"
   },
   {
     "titel": "Ratschläge für einen schlechten Redner",
@@ -139,7 +139,7 @@ window.EINTRAEGE = [
     "farbe_start": "#1c2422",
     "farbe_ende": "#3f7f7a",
     "slug": "hermann-von-helmholtz-erinnerungen-tischrede-zum-70-geburtstag",
-    "bild": "bilder/hermann-von-helmholtz-erinnerungen-tischrede-zum-70-geburtstag.jpg?v=1792564265"
+    "bild": "bilder/hermann-von-helmholtz-erinnerungen-tischrede-zum-70-geburtstag.jpg?v=1792568019"
   },
   {
     "titel": "Jedes Wort weiß etwas vom Teufelskreis",
@@ -159,7 +159,7 @@ window.EINTRAEGE = [
     "farbe_start": "#1f1f24",
     "farbe_ende": "#4b5d78",
     "slug": "georg-simmel-die-grossstaedte-und-das-geistesleben",
-    "bild": "bilder/georg-simmel-die-grossstaedte-und-das-geistesleben.jpg?v=1792564265"
+    "bild": "bilder/georg-simmel-die-grossstaedte-und-das-geistesleben.jpg?v=1792568019"
   },
   {
     "titel": "Lernen Sie programmieren in zehn Jahren",
@@ -200,7 +200,7 @@ window.EINTRAEGE = [
     "farbe_start": "#1f1d24",
     "farbe_ende": "#8c4a5a",
     "slug": "robert-musil-ueber-die-dummheit",
-    "bild": "bilder/robert-musil-ueber-die-dummheit.jpg?v=1792564265"
+    "bild": "bilder/robert-musil-ueber-die-dummheit.jpg?v=1792568019"
   },
   {
     "titel": "Die Abschaffung der Arbeit",

@@ -1,14 +1,23 @@
 // Lies etwas Wunderbares — eine Karte pro Text, der Hintergrund folgt den Farben des Textes.
-// Funktionsweise nach readsomethingwonderful.com, siehe ../analyse/ANALYSE_rsw.md.
+// Funktionsweise nach readsomethingwonderful.com (Analyse im intern-Repo: analyse/ANALYSE_rsw.md).
+//
+// Endlos: Die Texte werden in zufälliger Reihenfolge als „Runde“ angehängt; kurz vor dem Ende
+// kommt die nächste Runde dazu, nach dem letzten Text folgt also wieder der erste.
+// Links läuft die Titelliste mit: aktueller Titel oben, die folgenden immer blasser.
 
 (() => {
   const eintraege = window.EINTRAEGE || []
   const karten = document.getElementById('karten')
   const info = document.getElementById('info')
+  const liste = document.getElementById('liste')
+  const listeInnen = document.getElementById('liste-innen')
   const hg = [document.getElementById('hg1'), document.getElementById('hg2')]
   const hinweis = document.getElementById('hinweis')
 
+  const ZUFALL = true // false = Reihenfolge wie in texte.json
   const SCHWARZ = 'var(--schwarz)'
+  // Helligkeit der Titel unter dem aktuellen, wie im Original gemessen.
+  const STUFEN = [1, 0.4, 0.4, 0.4, 0.3, 0.3, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.05, 0.05]
   const LINK_SYMBOL =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>'
 
@@ -23,26 +32,35 @@
 
   const zeile = e => [e.autor, e.jahr].filter(Boolean).join(' • ')
 
-  // ---------- Aufbau ----------
+  const mischen = a => {
+    const b = [...a]
+    for (let i = b.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [b[i], b[j]] = [b[j], b[i]]
+    }
+    return b
+  }
+
+  eintraege.forEach(e => { e.slug = kurzname(e) })
+  if (!eintraege.length) return
+
+  // ---------- Reihenfolge ----------
+
+  // Ein Link auf einen Text (#slug) beginnt mit genau diesem Text, der Rest folgt gemischt.
+  const ziel = decodeURIComponent(location.hash.slice(1))
+  const alle = eintraege.map((_, i) => i)
+  const startIdx = eintraege.findIndex(e => e.slug === ziel)
+  let reihenfolge = ZUFALL ? mischen(alle) : alle
+  if (startIdx >= 0) {
+    const pos = reihenfolge.indexOf(startIdx)
+    reihenfolge = [...reihenfolge.slice(pos), ...reihenfolge.slice(0, pos)]
+  }
+
+  const folge = [] // Position → Index in eintraege, wächst mit jeder Runde
+
+  // ---------- Angaben rechts (einmal pro Text) ----------
 
   eintraege.forEach((e, i) => {
-    e.slug = kurzname(e)
-
-    const karte = document.createElement('section')
-    karte.className = 'karte'
-    karte.dataset.idx = i
-    karte.id = e.slug
-    karte.innerHTML = `
-      <div class="kopf">
-        <h2 class="titel">${text(e.titel)}</h2>
-        <p class="autor">${text(zeile(e))}</p>
-      </div>
-      <a href="${text(e.url)}" target="_blank" rel="noopener" aria-label="${text(e.titel)} von ${text(e.autor)} lesen">
-        <img src="${text(e.bild)}" alt="Seite: ${text(e.titel)}" width="1158" height="1428"
-             ${i < 2 ? '' : 'loading="lazy"'} decoding="async">
-      </a>`
-    karten.append(karte)
-
     const angaben = document.createElement('div')
     angaben.className = 'eintrag'
     angaben.dataset.idx = i
@@ -58,6 +76,62 @@
     info.append(angaben)
   })
 
+  // ---------- Karten und Titelliste (eine Runde nach der anderen) ----------
+
+  const beobachter = new IntersectionObserver(
+    b => b.forEach(x => {
+      if (x.isIntersecting) {
+        clearTimeout(beobachter.warte)
+        beobachter.warte = setTimeout(() => aktiviere(Number(x.target.dataset.pos)), 100)
+      }
+    }),
+    { threshold: 0.95 }, // wie im Original: erst wenn die Karte fast ganz zu sehen ist, nach 100 ms Ruhe
+  )
+
+  const groesse = new IntersectionObserver(
+    b => b.forEach(x => x.target.style.setProperty('--sichtbar', x.intersectionRatio.toFixed(3))),
+    { threshold: Array.from({ length: 21 }, (_, n) => n / 20) },
+  )
+
+  const runde = () => {
+    const karteFrag = document.createDocumentFragment()
+    const listeFrag = document.createDocumentFragment()
+    for (const i of reihenfolge) {
+      const pos = folge.length
+      folge.push(i)
+      const e = eintraege[i]
+
+      const karte = document.createElement('section')
+      karte.className = 'karte'
+      karte.dataset.pos = pos
+      karte.innerHTML = `
+        <div class="kopf">
+          <h2 class="titel">${text(e.titel)}</h2>
+          <p class="autor">${text(zeile(e))}</p>
+        </div>
+        <a href="${text(e.url)}" target="_blank" rel="noopener" aria-label="${text(e.titel)} von ${text(e.autor)} lesen">
+          <img src="${text(e.bild)}" alt="Seite: ${text(e.titel)}" width="1158" height="1428"
+               ${pos < 2 ? '' : 'loading="lazy"'} decoding="async">
+        </a>`
+      karteFrag.append(karte)
+      beobachter.observe(karte)
+      groesse.observe(karte.querySelector('img'))
+
+      const punkt = document.createElement('button')
+      punkt.className = 'listen-titel'
+      punkt.dataset.pos = pos
+      punkt.textContent = e.titel
+      punkt.tabIndex = -1
+      listeFrag.append(punkt)
+    }
+    karten.append(karteFrag)
+    listeInnen.append(listeFrag)
+  }
+
+  // Zwei Runden zum Start; jede weitere kommt, wenn man sich dem Ende der letzten nähert.
+  runde()
+  runde()
+
   // ---------- Hintergrund überblenden ----------
 
   let aktiv = -1
@@ -72,42 +146,49 @@
     sichtbar = neu
   }
 
-  const aktiviere = i => {
-    if (i === aktiv) return
-    aktiv = i
+  const faerbeListe = () => {
+    listeInnen.querySelectorAll('.listen-titel').forEach(t => {
+      const abstand = Number(t.dataset.pos) - aktiv
+      const hell = abstand < 0 ? 0 : (STUFEN[abstand] ?? 0)
+      t.style.setProperty('--hell', hell)
+      t.classList.toggle('aktiv', abstand === 0)
+      t.style.visibility = hell === 0 ? 'hidden' : ''
+    })
+  }
+
+  const listeNachfuehren = () => {
+    const t = listeInnen.querySelector(`.listen-titel[data-pos="${aktiv}"]`)
+    if (t) liste.scrollTo({ top: t.offsetTop, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+  }
+
+  const aktiviere = pos => {
+    if (pos === aktiv) return
+    aktiv = pos
+    const i = folge[pos]
     const e = eintraege[i]
     setzeHintergrund(e)
     info.querySelectorAll('.eintrag').forEach(el => el.classList.toggle('aktiv', Number(el.dataset.idx) === i))
+    faerbeListe()
+    listeNachfuehren()
     document.title = `${e.titel} – Lies etwas Wunderbares`
     history.replaceState(null, '', `#${e.slug}`)
+    if (pos > folge.length - eintraege.length) runde()
   }
 
-  // Wie im Original: erst wenn eine Karte zu 95 % sichtbar ist, nach 100 ms Ruhe.
-  let warte
-  const beobachter = new IntersectionObserver(
-    eintraege_ => {
-      eintraege_.forEach(b => {
-        if (b.isIntersecting) {
-          clearTimeout(warte)
-          warte = setTimeout(() => aktiviere(Number(b.target.dataset.idx)), 100)
-        }
-      })
-    },
-    { threshold: 0.95 },
-  )
+  // ---------- Bedienung ----------
 
-  // Karte wächst leicht, je mehr von ihr zu sehen ist.
-  const groesse = new IntersectionObserver(
-    eintraege_ => eintraege_.forEach(b => b.target.style.setProperty('--sichtbar', b.intersectionRatio.toFixed(3))),
-    { threshold: Array.from({ length: 21 }, (_, n) => n / 20) },
-  )
+  const springe = pos => karten.querySelector(`.karte[data-pos="${pos}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
-  karten.querySelectorAll('.karte').forEach(k => {
-    beobachter.observe(k)
-    groesse.observe(k.querySelector('img'))
+  liste.addEventListener('click', ev => {
+    const t = ev.target.closest('.listen-titel')
+    if (t) springe(Number(t.dataset.pos))
   })
 
-  // ---------- Bedienung ----------
+  // Nach eigenem Scrollen in der Liste springt sie nach kurzer Pause zum aktuellen Titel zurück.
+  liste.addEventListener('scroll', () => {
+    clearTimeout(liste.zurueck)
+    liste.zurueck = setTimeout(listeNachfuehren, 2500)
+  }, { passive: true })
 
   const blaettere = richtung =>
     document.body.scrollBy({ top: richtung * window.innerHeight * 0.8544, behavior: 'smooth' })
@@ -148,10 +229,5 @@
 
   // ---------- Start ----------
 
-  const ziel = decodeURIComponent(location.hash.slice(1))
-  const start = Math.max(0, eintraege.findIndex(e => e.slug === ziel))
-  if (eintraege.length) {
-    aktiviere(start)
-    if (start > 0) document.getElementById(eintraege[start].slug).scrollIntoView({ behavior: 'instant', block: 'start' })
-  }
+  aktiviere(0)
 })()
