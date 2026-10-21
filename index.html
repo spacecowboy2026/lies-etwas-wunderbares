@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lies etwas Wunderbares</title>
+  <script>
+    // Unter /lesen (ohne Schrägstrich) würden style.css und bilder/ eine Ebene zu hoch gesucht.
+    if (location.protocol.startsWith('http') && !location.pathname.endsWith('/') && !location.pathname.endsWith('.html'))
+      location.replace(location.pathname + '/' + location.search + location.hash)
+  </script>
+  <meta name="description" content="Zeitlose Texte, die es wert sind, gelesen zu werden.">
+  <meta name="theme-color" content="#181a1c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Lesen">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hintergrund" id="hg1" style="--opacity:1"></div>
+  <div class="hintergrund" id="hg2" style="--opacity:0"></div>
+
+  <a class="logo" href="#" aria-label="Lies etwas Wunderbares, zum Anfang">Lies<br>etwas<br>Wunderbares</a>
+
+  <aside class="info" id="info" aria-live="polite"></aside>
+
+  <main class="karten" id="karten"></main>
+
+  <button class="hilfe" id="hilfe-knopf" aria-label="Über diese Seite">?</button>
+  <dialog class="ueber" id="ueber">
+    <h2>Lies etwas Wunderbares</h2>
+    <p>Eine Sammlung von Texten, die es wert sind, gelesen zu werden: Essays, Reden und Briefe, die nicht veralten.</p>
+    <p>Jede Karte zeigt die Seite, auf der du den Text lesen kannst. Ein Klick darauf öffnet sie.</p>
+    <p class="leise">Blättern mit Scrollen, Wischen oder den Pfeiltasten ← →.</p>
+    <form method="dialog"><button>Schließen</button></form>
+  </dialog>
+
+  <div class="hinweis" id="hinweis" role="status"></div>
+
+  <script src="eintraege.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
