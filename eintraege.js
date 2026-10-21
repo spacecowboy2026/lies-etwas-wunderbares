@@ -7,8 +7,9 @@ window.EINTRAEGE = [
     "url": "https://de.wikisource.org/wiki/Ueber_die_allm%C3%A4hliche_Verfertigung_der_Gedanken_beim_Reden",
     "farbe_start": "#1f1d1a",
     "farbe_ende": "#8a6d3b",
+    "bildnachweis": "Erstdruck in „Nord und Süd“, 1878 (Wikimedia Commons)",
     "slug": "heinrich-von-kleist-ueber-die-allmaehliche-verfertigung-der-gedanken-beim-reden",
-    "bild": "bilder/heinrich-von-kleist-ueber-die-allmaehliche-verfertigung-der-gedanken-beim-reden.jpg?v=1792564265"
+    "bild": "bilder/heinrich-von-kleist-ueber-die-allmaehliche-verfertigung-der-gedanken-beim-reden.jpg?v=1792571455"
   },
   {
     "titel": "Aufschieben ist auch arbeiten",
@@ -47,8 +48,9 @@ window.EINTRAEGE = [
     "url": "https://projekt-gutenberg.org/authors/hugo-von-hofmannsthal/books/ein-brief/chapter/1/",
     "farbe_start": "#1e2a24",
     "farbe_ende": "#4f7a62",
+    "bildnachweis": "„Das Märchen der 672. Nacht“, Wiener Verlag 1905 (Internet Archive)",
     "slug": "hugo-von-hofmannsthal-ein-brief",
-    "bild": "bilder/hugo-von-hofmannsthal-ein-brief.jpg?v=1792568018"
+    "bild": "bilder/hugo-von-hofmannsthal-ein-brief.jpg?v=1792571455"
   },
   {
     "titel": "1.000 wahre Fans",
@@ -106,10 +108,11 @@ window.EINTRAEGE = [
     "autor": "Sigmund Freud",
     "jahr": 1916,
     "url": "https://projekt-gutenberg.org/authors/sigmund-freud/books/kleine-schriften-ii/chapter/33/",
-    "farbe_start": "#20232a",
-    "farbe_ende": "#6c5b7b",
+    "farbe_start": "#1f1810",
+    "farbe_ende": "#9a6a22",
+    "bildnachweis": "Erstdruck in „Das Land Goethes 1914–1916“ (Internet Archive)",
     "slug": "sigmund-freud-vergaenglichkeit",
-    "bild": "bilder/sigmund-freud-vergaenglichkeit.jpg?v=1792568018"
+    "bild": "bilder/sigmund-freud-vergaenglichkeit.jpg?v=1792571455"
   },
   {
     "titel": "Ratschläge für einen schlechten Redner",
@@ -138,8 +141,9 @@ window.EINTRAEGE = [
     "url": "https://projekt-gutenberg.org/authors/hermann-ludwig-ferdinand-von-helmholtz/books/tischrede-gehalten-bei-der-feier-des-70-geburtstages-berlin-1891/chapter/1/",
     "farbe_start": "#1c2422",
     "farbe_ende": "#3f7f7a",
+    "bildnachweis": "Foto: Julius Cornelius Schaarwächter, 1884, gemeinfrei (Wikimedia Commons)",
     "slug": "hermann-von-helmholtz-erinnerungen-tischrede-zum-70-geburtstag",
-    "bild": "bilder/hermann-von-helmholtz-erinnerungen-tischrede-zum-70-geburtstag.jpg?v=1792568019"
+    "bild": "bilder/hermann-von-helmholtz-erinnerungen-tischrede-zum-70-geburtstag.jpg?v=1792571455"
   },
   {
     "titel": "Jedes Wort weiß etwas vom Teufelskreis",
@@ -158,8 +162,9 @@ window.EINTRAEGE = [
     "url": "https://projekt-gutenberg.org/authors/georg-simmel/books/die-grossstaedte-und-das-geistesleben/chapter/2/",
     "farbe_start": "#1f1f24",
     "farbe_ende": "#4b5d78",
+    "bildnachweis": "Erstdruck in „Die Großstadt“, Jahrbuch der Gehe-Stiftung, 1903 (Internet Archive)",
     "slug": "georg-simmel-die-grossstaedte-und-das-geistesleben",
-    "bild": "bilder/georg-simmel-die-grossstaedte-und-das-geistesleben.jpg?v=1792568019"
+    "bild": "bilder/georg-simmel-die-grossstaedte-und-das-geistesleben.jpg?v=1792571455"
   },
   {
     "titel": "Lernen Sie programmieren in zehn Jahren",
@@ -179,8 +184,9 @@ window.EINTRAEGE = [
     "url": "https://www.rilke.de/briefe/170203.htm",
     "farbe_start": "#26201a",
     "farbe_ende": "#b3926b",
+    "bildnachweis": "Rilke in Rom, 1904. Foto: unbekannt, gemeinfrei (Wikimedia Commons)",
     "slug": "rainer-maria-rilke-briefe-an-einen-jungen-dichter",
-    "bild": "bilder/rainer-maria-rilke-briefe-an-einen-jungen-dichter.jpg?v=1792564265"
+    "bild": "bilder/rainer-maria-rilke-briefe-an-einen-jungen-dichter.jpg?v=1792571455"
   },
   {
     "titel": "Anfangen!",
@@ -199,8 +205,9 @@ window.EINTRAEGE = [
     "url": "https://projekt-gutenberg.org/authors/robert-musil/books/ueber-die-dummheit/chapter/2/",
     "farbe_start": "#1f1d24",
     "farbe_ende": "#8c4a5a",
+    "bildnachweis": "Foto: unbekannt, um 1930, gemeinfrei (Wikimedia Commons)",
     "slug": "robert-musil-ueber-die-dummheit",
-    "bild": "bilder/robert-musil-ueber-die-dummheit.jpg?v=1792568019"
+    "bild": "bilder/robert-musil-ueber-die-dummheit.jpg?v=1792571455"
   },
   {
     "titel": "Die Abschaffung der Arbeit",
@@ -220,7 +227,175 @@ window.EINTRAEGE = [
     "url": "https://archive.org/details/wie-ich-die-welt-sehe-albert-einstein-mein-weltbild-1934",
     "farbe_start": "#1f2219",
     "farbe_ende": "#8a8f4a",
+    "bildnachweis": "„Mein Weltbild“, Querido 1934 (Internet Archive)",
     "slug": "albert-einstein-wie-ich-die-welt-sehe",
-    "bild": "bilder/albert-einstein-wie-ich-die-welt-sehe.jpg?v=1792564265"
+    "bild": "bilder/albert-einstein-wie-ich-die-welt-sehe.jpg?v=1792571455"
+  },
+  {
+    "titel": "Bei den Heizern des Riesendampfers",
+    "autor": "Egon Erwin Kisch",
+    "jahr": 1914,
+    "url": "https://projekt-gutenberg.org/authors/egon-erwin-kisch/books/der-rasende-reporter/chapter/21/",
+    "farbe_start": "#151515",
+    "farbe_ende": "#5b6b7a",
+    "bildnachweis": "„Der rasende Reporter“, Erich Reiss 1925 (Internet Archive)",
+    "slug": "egon-erwin-kisch-bei-den-heizern-des-riesendampfers",
+    "bild": "bilder/egon-erwin-kisch-bei-den-heizern-des-riesendampfers.jpg?v=1792571455"
+  },
+  {
+    "titel": "Der alte Kellner",
+    "autor": "Joseph Roth",
+    "jahr": 1930,
+    "url": "https://projekt-gutenberg.org/authors/joseph-roth/books/panoptikum/chapter/14/",
+    "farbe_start": "#22201c",
+    "farbe_ende": "#9b7b4f",
+    "slug": "joseph-roth-der-alte-kellner",
+    "bild": "bilder/joseph-roth-der-alte-kellner.jpg?v=1792571455"
+  },
+  {
+    "titel": "Das nächtliche Thierleben im Urwalde",
+    "autor": "Alexander von Humboldt",
+    "jahr": 1849,
+    "url": "https://humboldt.unibe.ch/text/1849-Das_naechtliche_Leben-01-neu",
+    "farbe_start": "#121a14",
+    "farbe_ende": "#3f6b45",
+    "bildnachweis": "Daguerreotypie: Hermann Biow, 1847, gemeinfrei (Wikimedia Commons)",
+    "slug": "alexander-von-humboldt-das-naechtliche-thierleben-im-urwalde",
+    "bild": "bilder/alexander-von-humboldt-das-naechtliche-thierleben-im-urwalde.jpg?v=1792571455"
+  },
+  {
+    "titel": "Die Sonnenfinsternis am 8. Juli 1842",
+    "autor": "Adalbert Stifter",
+    "jahr": 1842,
+    "url": "https://projekt-gutenberg.org/authors/adalbert-stifter/books/die-sonnenfinsternis-am-8-juli-1842/chapter/1/",
+    "farbe_start": "#0e0e18",
+    "farbe_ende": "#d29b3a",
+    "bildnachweis": "Foto: Josef Grandauer, 1862 (Wikimedia Commons)",
+    "slug": "adalbert-stifter-die-sonnenfinsternis-am-8-juli-1842",
+    "bild": "bilder/adalbert-stifter-die-sonnenfinsternis-am-8-juli-1842.jpg?v=1792571455"
+  },
+  {
+    "titel": "Vor dem Gesetz",
+    "autor": "Franz Kafka",
+    "jahr": 1915,
+    "url": "https://de.wikisource.org/wiki/Vor_dem_Gesetz",
+    "farbe_start": "#121212",
+    "farbe_ende": "#5a5a6e",
+    "bildnachweis": "Foto: unbekannt, 1923/24, gemeinfrei (Wikimedia Commons)",
+    "slug": "franz-kafka-vor-dem-gesetz",
+    "bild": "bilder/franz-kafka-vor-dem-gesetz.jpg?v=1792571455"
+  },
+  {
+    "titel": "Unverhofftes Wiedersehen",
+    "autor": "Johann Peter Hebel",
+    "jahr": 1811,
+    "url": "https://www.deutschestextarchiv.de/book/view/hebel_schatzkaestlein_1811?p=300",
+    "farbe_start": "#14120f",
+    "farbe_ende": "#8c6f3e",
+    "bildnachweis": "Erstdruck im „Schatzkästlein des rheinischen Hausfreundes“, Cotta 1811 (Deutsches Textarchiv)",
+    "slug": "johann-peter-hebel-unverhofftes-wiedersehen",
+    "bild": "bilder/johann-peter-hebel-unverhofftes-wiedersehen.jpg?v=1792571455"
+  },
+  {
+    "titel": "Brief an Sophie Liebknecht",
+    "autor": "Rosa Luxemburg",
+    "jahr": 1917,
+    "url": "https://projekt-gutenberg.org/authors/rosa-luxemburg/books/briefe-aus-dem-gefaengnis/chapter/18/",
+    "farbe_start": "#1e1616",
+    "farbe_ende": "#a3473f",
+    "bildnachweis": "„Briefe aus dem Gefängnis“, Berlin 1920 (Internet Archive)",
+    "slug": "rosa-luxemburg-brief-an-sophie-liebknecht",
+    "bild": "bilder/rosa-luxemburg-brief-an-sophie-liebknecht.jpg?v=1792571456"
+  },
+  {
+    "titel": "Nachwort zum Romanzero",
+    "autor": "Heinrich Heine",
+    "jahr": 1851,
+    "url": "https://de.wikisource.org/wiki/Romanzero/Nachwort",
+    "farbe_start": "#1a1a20",
+    "farbe_ende": "#6e5f8a",
+    "bildnachweis": "Zeichnung: Ernst Benedikt Kietz, 1851, gemeinfrei (Wikimedia Commons)",
+    "slug": "heinrich-heine-nachwort-zum-romanzero",
+    "bild": "bilder/heinrich-heine-nachwort-zum-romanzero.jpg?v=1792571456"
+  },
+  {
+    "titel": "Was heißt und zu welchem Ende studiert man Universalgeschichte?",
+    "autor": "Friedrich Schiller",
+    "jahr": 1789,
+    "url": "https://de.wikisource.org/wiki/Was_hei%C3%9Ft_und_zu_welchem_Ende_studiert_man_Universalgeschichte%3F",
+    "farbe_start": "#211c14",
+    "farbe_ende": "#b8975a",
+    "bildnachweis": "Erstdruck, Jena 1789 (Deutsches Textarchiv)",
+    "slug": "friedrich-schiller-was-heisst-und-zu-welchem-ende-studiert-man-universalgeschich",
+    "bild": "bilder/friedrich-schiller-was-heisst-und-zu-welchem-ende-studiert-man-universalgeschich.jpg?v=1792571456"
+  },
+  {
+    "titel": "Wie funktionieren Sprachmodelle wie ChatGPT?",
+    "autor": "Manon Bischoff",
+    "jahr": 2023,
+    "url": "https://www.spektrum.de/news/wie-funktionieren-sprachmodelle-wie-chatgpt/2115924",
+    "farbe_start": "#0d1b2a",
+    "farbe_ende": "#2f7fb8",
+    "slug": "manon-bischoff-wie-funktionieren-sprachmodelle-wie-chatgpt",
+    "bild": "bilder/manon-bischoff-wie-funktionieren-sprachmodelle-wie-chatgpt.jpg?v=1792571456"
+  },
+  {
+    "titel": "Alles Zufall?",
+    "autor": "Malte Henk",
+    "jahr": 2017,
+    "url": "https://www.bdzv.de/awards/theodor-wolff-preis/nominierte-texte/2018/malte-henk/nominierter-text",
+    "farbe_start": "#1d1a24",
+    "farbe_ende": "#b03a7a",
+    "slug": "malte-henk-alles-zufall",
+    "bild": "bilder/malte-henk-alles-zufall.jpg?v=1792571456"
+  },
+  {
+    "titel": "Der Mann, der die Wüste aufhielt",
+    "autor": "Andrea Jeska",
+    "jahr": 2012,
+    "url": "https://www.bdzv.de/awards/theodor-wolff-preis/nominierte-texte/2013/andrea-jeska/nominierter-text",
+    "farbe_start": "#2a1d10",
+    "farbe_ende": "#c98a3a",
+    "slug": "andrea-jeska-der-mann-der-die-wueste-aufhielt",
+    "bild": "bilder/andrea-jeska-der-mann-der-die-wueste-aufhielt.jpg?v=1792571456"
+  },
+  {
+    "titel": "Wie gut ist der Mensch?",
+    "autor": "Wolfgang Uchatius",
+    "jahr": 2020,
+    "url": "https://www.bdzv.de/awards/theodor-wolff-preis/nominierte-texte/2021/wolfgang-uchatius/nominierter-text",
+    "farbe_start": "#14202a",
+    "farbe_ende": "#3d8fb0",
+    "slug": "wolfgang-uchatius-wie-gut-ist-der-mensch",
+    "bild": "bilder/wolfgang-uchatius-wie-gut-ist-der-mensch.jpg?v=1792571456"
+  },
+  {
+    "titel": "Warum gibt es in der Biologie keine Metalle?",
+    "autor": "Martin Bäker",
+    "jahr": 2011,
+    "url": "https://scienceblogs.de/hier-wohnen-drachen/2011/07/14/warum-gibt-es-in-der-biologie-keine-metalle/",
+    "farbe_start": "#1a1d21",
+    "farbe_ende": "#7d8a96",
+    "slug": "martin-baeker-warum-gibt-es-in-der-biologie-keine-metalle",
+    "bild": "bilder/martin-baeker-warum-gibt-es-in-der-biologie-keine-metalle.jpg?v=1792571456"
+  },
+  {
+    "titel": "Wie man herausfindet, ob man Talent hat",
+    "autor": "Andreas Eschbach",
+    "url": "https://www.andreaseschbach.de/schreiben/fragen/talent.html",
+    "farbe_start": "#1c1c1c",
+    "farbe_ende": "#9c4f2e",
+    "slug": "andreas-eschbach-wie-man-herausfindet-ob-man-talent-hat",
+    "bild": "bilder/andreas-eschbach-wie-man-herausfindet-ob-man-talent-hat.jpg?v=1792571456"
+  },
+  {
+    "titel": "Vielleicht Esther",
+    "autor": "Katja Petrowskaja",
+    "jahr": 2013,
+    "url": "https://archiv-bachmannpreis.orf.at//bachmannpreis.eu/de/texte/4388/index.html",
+    "farbe_start": "#1c1a12",
+    "farbe_ende": "#b5a03a",
+    "slug": "katja-petrowskaja-vielleicht-esther",
+    "bild": "bilder/katja-petrowskaja-vielleicht-esther.jpg?v=1792571456"
   }
 ]

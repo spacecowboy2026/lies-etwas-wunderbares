@@ -272,6 +272,18 @@
   document.getElementById('hilfe-knopf').addEventListener('click', () => ueber.showModal())
   ueber.addEventListener('click', ev => { if (ev.target === ueber) ueber.close() })
 
+  // ---------- Bildnachweise ----------
+
+  const nachweise = document.getElementById('nachweise')
+  eintraege
+    .filter(e => e.bildnachweis)
+    .sort((a, b) => a.autor.localeCompare(b.autor, 'de'))
+    .forEach(e => {
+      const li = document.createElement('li')
+      li.innerHTML = `<strong>${text(e.autor)}</strong>, ${text(e.titel)}: ${text(e.bildnachweis)}`
+      nachweise.append(li)
+    })
+
   // ---------- Empfehlung einreichen (per Web3Forms als E-Mail) ----------
 
   const formular = document.getElementById('empfehlung')

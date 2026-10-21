@@ -326,6 +326,12 @@ body {
 .empfehlung .senden:disabled { opacity: .5; cursor: default; }
 .empfehlung .status { margin: 10px 0 0; min-height: 1.5em; font-size: 14px; }
 
+.nachweise { margin-top: 22px; }
+.nachweise summary { cursor: pointer; font-size: 14px; color: hsla(0, 0%, 100%, .7); }
+.nachweise ul { margin: 8px 0 0; padding-left: 18px; font-size: 12px; line-height: 1.5; color: hsla(0, 0%, 100%, .6); }
+.nachweise li { margin-bottom: 4px; }
+.nachweise strong { font-weight: 600; color: hsla(0, 0%, 100%, .75); }
+
 .hinweis {
   position: fixed;
   left: 50%;
