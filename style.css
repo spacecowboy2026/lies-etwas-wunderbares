@@ -368,35 +368,52 @@ body {
   .info { display: none; }
   .hilfe { right: 16px; bottom: 16px; }
 
-  /* Maße aus dem Original auf einem iPhone (390 × 844): Titel bei 12 %, Karte ab 21,7 %. */
+  /* Maße aus dem Original, gemessen auf einem iPhone (390 × 844):
+     eine Karte pro 75 % Bildschirmhöhe, Karte mittig mit 80 % Breite und vollständig sichtbar,
+     Titel linksbündig darüber – und nur über der aktuellen Karte. */
   .karte {
     flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
     height: 75dvh;
-    padding: 11dvh 0 0 17.4vw;
+    padding: 10dvh 10vw 0;
     scroll-snap-stop: always;
   }
 
   .karte .kopf {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     flex: none;
-    margin: 0 0 3.4dvh 4.8vw;
-    max-width: calc(100vw - 30vw);
+    width: 80vw;
+    height: 78px; /* Platz für zwei Titelzeilen: Karten beginnen immer an derselben Stelle */
+    margin: 0 0 2.4dvh;
+    opacity: 0;
+    transition: opacity .3s linear;
   }
+
+  .karte.aktiv .kopf { opacity: 1; }
 
   .karte .kopf .titel {
-    font-size: 21px;
-    line-height: 1.2;
+    font-size: 20px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  .karte .kopf .autor { margin-top: 4px; font-size: 18px; }
 
-  .karte a { height: auto; flex: 1; min-height: 0; }
+  .karte .kopf .autor { margin-top: 4px; font-size: 17px; }
+
+  .karte a { flex: none; width: 80vw; height: auto; }
   .karte img {
+    width: 100%;
     max-width: none;
-    width: 100vw;
-    height: 100%;
-    border-right: 0;
-    border-radius: 8px 0 0 8px;
+    height: auto;
+    max-height: 52dvh;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
     transform: none;
   }
 }

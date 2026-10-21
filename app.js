@@ -215,6 +215,8 @@
     const i = folge[pos]
     const e = eintraege[i]
     setzeHintergrund(e)
+    karten.querySelector('.karte.aktiv')?.classList.remove('aktiv')
+    karten.querySelector(`.karte[data-pos="${pos}"]`)?.classList.add('aktiv')
     info.querySelectorAll('.eintrag').forEach(el => el.classList.toggle('aktiv', Number(el.dataset.idx) === i))
     listeNachfuehren()
     document.title = `${e.titel} – Wunderbar(es) lesen`
