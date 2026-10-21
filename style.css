@@ -326,11 +326,15 @@ body {
 .empfehlung .senden:disabled { opacity: .5; cursor: default; }
 .empfehlung .status { margin: 10px 0 0; min-height: 1.5em; font-size: 14px; }
 
-.nachweise { margin-top: 22px; }
-.nachweise summary { cursor: pointer; font-size: 14px; color: hsla(0, 0%, 100%, .7); }
-.nachweise ul { margin: 8px 0 0; padding-left: 18px; font-size: 12px; line-height: 1.5; color: hsla(0, 0%, 100%, .6); }
-.nachweise li { margin-bottom: 4px; }
-.nachweise strong { font-weight: 600; color: hsla(0, 0%, 100%, .75); }
+.vermerke { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 22px; font-size: 12px; color: hsla(0, 0%, 100%, .55); }
+.vermerke details { flex-basis: auto; }
+.vermerke details[open] { flex-basis: 100%; }
+.vermerke summary { cursor: pointer; list-style: none; text-decoration: underline; text-underline-offset: 2px; }
+.vermerke summary::-webkit-details-marker { display: none; }
+.vermerke p { margin: 8px 0; font-size: 12px; line-height: 1.5; color: hsla(0, 0%, 100%, .65); }
+.vermerke ul { margin: 8px 0 0; padding-left: 18px; font-size: 12px; line-height: 1.5; color: hsla(0, 0%, 100%, .6); }
+.vermerke li { margin-bottom: 4px; }
+.vermerke strong { font-weight: 600; color: hsla(0, 0%, 100%, .75); }
 
 .hinweis {
   position: fixed;

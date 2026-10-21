@@ -284,33 +284,40 @@
       nachweise.append(li)
     })
 
-  // ---------- Empfehlung einreichen (per Web3Forms als E-Mail) ----------
+  // ---------- Empfehlung einreichen (per FormSubmit als E-Mail) ----------
 
   const formular = document.getElementById('empfehlung')
   const status = document.getElementById('empfehlung-status')
   formular.addEventListener('submit', async ev => {
     ev.preventDefault()
-    const schluessel = (window.EINSTELLUNGEN || {}).web3formsSchluessel
-    if (!schluessel) {
-      status.textContent = 'Das Formular ist noch nicht eingerichtet. Bald geht es.'
-      return
-    }
+    const an = (window.EINSTELLUNGEN || {}).empfehlungAn
     const daten = new FormData(formular)
-    if (daten.get('botcheck')) return // Feld ist für Menschen unsichtbar; ausgefüllt hat es nur ein Bot
-    daten.append('access_key', schluessel)
-    daten.append('subject', `Empfehlung: ${daten.get('text') || daten.get('link')}`)
-    daten.append('from_name', 'Lies etwas Wunderbares')
+    if (daten.get('_honey')) return // Feld ist für Menschen unsichtbar; ausgefüllt hat es nur ein Bot
     const knopf = formular.querySelector('.senden')
     knopf.disabled = true
     status.textContent = 'Wird gesendet …'
     try {
-      const antwort = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: daten })
+      const antwort = await fetch(`https://formsubmit.co/ajax/${an}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Empfehlung: ${daten.get('text') || daten.get('link')}`,
+          _template: 'table',
+          Link: daten.get('link'),
+          'Titel und Autor': daten.get('text') || '–',
+          Warum: daten.get('warum') || '–',
+          Name: daten.get('name') || '–',
+        }),
+      })
       const ergebnis = await antwort.json()
-      if (!ergebnis.success) throw new Error(ergebnis.message)
+      if (String(ergebnis.success) !== 'true') throw new Error(ergebnis.message)
       formular.reset()
       status.textContent = 'Danke! Deine Empfehlung ist angekommen.'
     } catch {
-      status.textContent = 'Das hat leider nicht geklappt. Versuch es später noch einmal.'
+      // Ersatzweg: das eigene Mailprogramm mit vorbereiteter Nachricht
+      const betreff = encodeURIComponent(`Empfehlung: ${daten.get('text') || daten.get('link')}`)
+      const inhalt = encodeURIComponent(`${daten.get('link')}\n\n${daten.get('warum') || ''}\n\n${daten.get('name') || ''}`)
+      status.innerHTML = `Das hat leider nicht geklappt. <a href="mailto:${an}?subject=${betreff}&body=${inhalt}">Per E-Mail schicken</a>`
     } finally {
       knopf.disabled = false
     }

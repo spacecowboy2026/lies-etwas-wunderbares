@@ -1,8 +1,9 @@
 // Einstellungen der Seite.
 //
-// Empfehlungen: Schlüssel von https://web3forms.com (kostenlos, kommt per E-Mail).
-// Er darf öffentlich hier stehen – er erlaubt nur, Nachrichten an die hinterlegte Adresse zu schicken.
-// Solange er leer ist, zeigt das Formular einen Hinweis statt zu senden.
+// Empfehlungen laufen über FormSubmit (https://formsubmit.co): kein Konto, kein Schlüssel.
+// Die erste Einsendung löst eine Bestätigungsmail an diese Adresse aus; erst nach dem Klick
+// darauf werden Empfehlungen zugestellt. FormSubmit bietet danach eine Ersatzadresse
+// (zufällige Zeichenfolge) an, die man hier statt der echten Adresse eintragen kann.
 window.EINSTELLUNGEN = {
-  web3formsSchluessel: '',
+  empfehlungAn: 'gomargraf@gmail.com',
 }

@@ -16,7 +16,7 @@
   <meta name="apple-mobile-web-app-title" content="Lesen">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=fd756197">
+  <link rel="stylesheet" href="style.css?v=4eca0787">
 </head>
 <body>
   <div class="hintergrund" id="hg1" style="--opacity:1"></div>
@@ -46,23 +46,40 @@
       <label>Titel und Autor <input type="text" name="text" placeholder="optional"></label>
       <label>Warum dieser Text? <textarea name="warum" rows="3" placeholder="optional"></textarea></label>
       <label>Dein Name <input type="text" name="name" placeholder="optional, für „empfohlen von …“"></label>
-      <input type="checkbox" name="botcheck" class="falle" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <p class="leise klein">Deine Angaben gehen per E-Mail an mich (über den Formulardienst Web3Forms) und werden nur für diese Empfehlung genutzt.</p>
+      <input type="text" name="_honey" class="falle" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="leise klein">Deine Angaben gehen per E-Mail an mich (über den Formulardienst FormSubmit) und werden nur für diese Empfehlung genutzt. Mehr unter Datenschutz.</p>
       <button type="submit" class="senden">Empfehlung senden</button>
       <p class="status" id="empfehlung-status" role="status"></p>
     </form>
 
-    <details class="nachweise">
-      <summary>Bildnachweise</summary>
-      <p class="leise klein">Die Karten zeigen die Seite, auf der man den Text liest, oder ein historisches Bild. Scans und Porträts stammen aus diesen Quellen:</p>
-      <ul id="nachweise"></ul>
-    </details>
+    <div class="vermerke">
+      <details>
+        <summary>Bildnachweise</summary>
+        <p>Die Karten zeigen die Seite, auf der man den Text liest, oder ein historisches Bild. Scans und Porträts stammen aus diesen Quellen:</p>
+        <ul id="nachweise"></ul>
+      </details>
+      <details>
+        <summary>Impressum</summary>
+        <p>Ein privates, nicht kommerzielles Projekt von Ole Margraf.<br>
+        Kontakt: <span class="adresse" data-name="gomargraf" data-domain="gmail.com">gomargraf (at) gmail.com</span></p>
+        <p>Die verlinkten Texte und Seiten gehören ihren Urheberinnen und Urhebern. Für deren Inhalte bin ich nicht verantwortlich.</p>
+      </details>
+      <details>
+        <summary>Datenschutz</summary>
+        <p><strong>Verantwortlich:</strong> Ole Margraf, gomargraf (at) gmail.com</p>
+        <p><strong>Hosting:</strong> Die Seite liegt bei GitHub Pages (GitHub Inc., USA). Beim Aufruf verarbeitet GitHub technisch nötige Daten wie die IP-Adresse, um die Seite auszuliefern und Missbrauch abzuwehren. Siehe die Datenschutzerklärung von GitHub.</p>
+        <p><strong>Keine Cookies, kein Tracking:</strong> Die Seite setzt keine Cookies und wertet nichts aus. Schriften und Bilder liegen auf dieser Seite selbst; es werden keine fremden Dienste nachgeladen.</p>
+        <p><strong>Empfehlungsformular:</strong> Wenn du eine Empfehlung schickst, gehen Link, Titel, Begründung und (freiwillig) dein Name über den Dienst FormSubmit (Devro LABS, Sitz außerhalb der EU) als E-Mail an mich. Rechtsgrundlage ist deine Einwilligung durch das Absenden (Art. 6 Abs. 1 lit. a DSGVO). Ich nutze die Angaben nur, um den Text zu prüfen, und lösche die E-Mail danach. FormSubmit speichert Einsendungen nach eigenen Angaben bis zu 30 Tage.</p>
+        <p><strong>Links:</strong> Ein Klick auf eine Karte öffnet eine fremde Seite; dort gelten deren Datenschutzregeln.</p>
+        <p><strong>Deine Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Widerruf deiner Einwilligung – eine E-Mail genügt. Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
+      </details>
+    </div>
   </dialog>
 
   <div class="hinweis" id="hinweis" role="status"></div>
 
-  <script src="einstellungen.js?v=5e2649e8"></script>
+  <script src="einstellungen.js?v=be689c06"></script>
   <script src="eintraege.js?v=518feb87"></script>
-  <script src="app.js?v=90d3fcfb"></script>
+  <script src="app.js?v=e56e7e0e"></script>
 </body>
 </html>
